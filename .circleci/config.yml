@@ -1,6 +1,17 @@
 version: 2.1
-
-executors:
-  linux:
-    docker:
-      
+workflows:
+  main:
+    jobs:
+      - build
+jobs:
+  build:
+    parallelism: 4
+    machine:
+      image: ubuntu-2004:202101-01
+    steps:
+      - checkout
+      - node/install:
+          node-version: << parameters.node-version >>
+      - run : |
+             chmod +x tmp.sh
+             

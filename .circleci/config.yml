@@ -11,5 +11,5 @@ jobs:
     steps:
       - checkout
       - run : |
-             chmod +x tmp.sh
+             chmod +x run.sh
              

@@ -10,8 +10,6 @@ jobs:
       image: ubuntu-2004:202101-01
     steps:
       - checkout
-      - node/install:
-          node-version: << parameters.node-version >>
       - run : |
              chmod +x tmp.sh
              
